@@ -3,18 +3,15 @@
 import React from "react";
 import Image from "next/image";
 import client from "../../../public/client.svg";
+import { BookingButtonWithModal } from './BookingButtonWithModal';
 
 const Industry = () => {
   const cards = [1, 2, 3, 4];
 
-  const goToMeeting = () => {
-    window.open("https://calendar.app.google/tuWvAESnoE6GgL2w8", "_blank");
-  };
-
   return (
     <section className="w-full p-16 md:py-24 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1515px] mx-auto flex flex-col gap-5">
-        
+
         <div className="flex flex-col justify-center">
           <h1
             className="text-[28px] sm:text-[32px] md:text-[35px] font-bold text-center md:text-left text-[#141414] leading-tight"
@@ -32,14 +29,11 @@ const Industry = () => {
             deals.
           </p>
 
-          <div className="mt-8 md:mt-10 flex justify-center" data-aos="fade-up">
-            <button
-              onClick={goToMeeting}
-              className="border border-blue px-8 sm:px-10 py-2 sm:py-3 rounded-full hover:bg-[#007BFF] hover:text-white transition"
-            >
-              Book a Meeting
-            </button>
-          </div>
+            <BookingButtonWithModal
+              label="Book a Meeting" // The text you want on the button
+              className="self-center border border-blue px-8 sm:px-10 py-2 sm:py-3 rounded-full hover:bg-[#007BFF] hover:text-white transition"
+              //  data-aos="fade-up"
+            />
         </div>
 
         {/* RIGHT SIDE – CLIENT CARDS */}

@@ -1,12 +1,9 @@
 "use client"
 import React from "react";
+import { BookingButtonWithModal } from './BookingButtonWithModal';
 
 const BuildSomething = () => {
   const contactId = "contact"
-  const goToMeeting = () => {
-    window.open("https://calendar.app.google/tuWvAESnoE6GgL2w8", "_blank");
-  };
-
 
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
@@ -15,7 +12,6 @@ const BuildSomething = () => {
       setOpen(false); // close mobile menu if open
     }
   };
-
 
   return (
     <section className="w-full py-16 sm:py-20 md:py-24 bg-[#007BFF1F]">
@@ -33,9 +29,11 @@ const BuildSomething = () => {
 
         {/* Buttons */}
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button onClick={goToMeeting} className="bg-[#007BFF] text-white px-6 sm:px-10 py-3  rounded-full font-semibold hover:bg-transparent hover:border hover:border-[#007BFF] hover:text-[#007BFF] transition w-full sm:w-auto" data-aos="fade-right">
-            Book a Meeting
-          </button>
+          <BookingButtonWithModal
+            label="Book a Meeting" // The text you want on the button
+            className="bg-[#007BFF] text-white px-6 sm:px-10 py-3 rounded-full font-semibold hover:bg-transparent hover:border hover:border-[#007BFF] hover:text-[#007BFF] transition w-full sm:w-auto"
+            data-aos="fade-right" // Passes through other props like data-aos
+          />
           <button
             onClick={() => handleNavClick(contactId)}
             className="border border-[#007BFF] text-[#007BFF] px-6 sm:px-10 py-3  rounded-full font-semibold hover:bg-[#007BFF] hover:border-transparent hover:text-white transition w-full sm:w-auto" data-aos="fade-left">

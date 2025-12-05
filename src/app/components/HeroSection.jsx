@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import banner from "../../../public/banner.svg";
+import { BookingButtonWithModal } from './BookingButtonWithModal';
 
 const HeroSection = () => {
   const contactId = "contact"
@@ -58,16 +59,15 @@ const HeroSection = () => {
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
 
-          <button
-            onClick={() => window.open("https://calendar.app.google/tuWvAESnoE6GgL2w8", "_blank")}
+
+          <BookingButtonWithModal
+            label="Book a Meeting" // The text you want on the button
             className="bg-[#007BFFFC] text-white px-10 sm:px-12 py-3 
   rounded-full text-base sm:text-lg font-normal
   transition-all duration-200 
   hover:bg-transparent hover:border hover:border-primaryBlue"
             data-aos="fade-right"
-          >
-            Book a Meeting
-          </button>
+          />
 
           {/* Contact Us */}
           <button
