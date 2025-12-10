@@ -24,7 +24,7 @@ const Integrations = () => {
 
   return (
     <section className="w-full py-6 md:py-24">
-      <div className="max-w-[1515px] mx-auto px-4 md:px-6 text-center">
+      <div className="max-w-[1515px] mx-auto px-4 md:px-6 text-center"> 
 
         {/* HEADING */}
         <h1 className="text-[35px] font-bold text-[#141414]" data-aos="fade-down">

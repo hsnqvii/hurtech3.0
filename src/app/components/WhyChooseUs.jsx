@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
   ];
   return (
     <section className="w-full py-6 md:py-20 bg-light-gray">
-      <div className="max-w-[1515px] mx-auto px-6">
+      <div className="max-w-[1515px] mx-auto px-6"> 
 
         {/* Heading */}
         <h2 className="text-[35px] md:text-[35px] font-bold text-[#141414] text-center md:text-left " data-aos="fade-down">
@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
               key={index}
               className="flex-none w-full sm:w-[48%] lg:w-[23%] p-2"
             >
-              <div className="bg-white shadow py-6 flex flex-col items-center gap-4 px-4 h-full">
+              <div className="bg-white shadow py-8 rounded-sm flex flex-col items-center gap-4 px-4 h-full">
                 <div className="w-[50px] h-[50px] rounded-full text-white text-[22px] flex justify-center items-center p-3 bg-[#007BFFFC]">
                   <Image
                     src={card.img}
@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
                     className="transition"
                   />
                 </div>
-                <h3 className="text-[22px] font-semibold text-center text-[#007BFF]">{card.title}</h3>
+                <h3 className="text-[22px] font-semibold text-center text-[#000000]">{card.title}</h3>
                 <p className="mt-2 text-[#3F3F3F] text-[18px] text-center">{card.desc}</p>
               </div>
             </div>

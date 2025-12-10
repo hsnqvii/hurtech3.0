@@ -18,7 +18,7 @@ const RevenuSection = () => {
 
   return (
     <section className="w-full py-6 md:py-20 bg-white">
-      <div className="max-w-[1515px] mx-auto px-6">
+      <div className="max-w-[1515px] mx-auto px-6"> 
 
         {/* Heading */}
         <h2
@@ -44,7 +44,7 @@ const RevenuSection = () => {
               key={index}
               className="bg-white rounded-xl py-6 px-2  h-full flex flex-col items-center "
             >
-              <div className="w-full h-[300px] relative mb-4">
+              <div className="w-full h-[320px] relative mb-4">
                 <Image
                   src={card.img}
                   alt={card.title}

@@ -2,14 +2,29 @@
 import React, { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import building from "../../../public/building.svg";
+import building from "../../../public/building.png";
 
 const Building = () => {
+  const [active, setActive] = useState(0);
   const stats = [
-    { title: "50M+", value: 50, desc: "Transactions Processed" },
+    { title: "10M+", value: 10, desc: "Transactions Processed" },
     { title: "30%", value: 30, desc: "Revenue Increase" },
-    { title: "500+", value: 500, desc: "Happy Clients" },
     { title: "15+", value: 15, desc: "Leading Brands" },
+    { title: "150+", value: 150, desc: "Happy Clients" },
+  ];
+  const points = [
+    {
+      title: "Building for the Best",
+      desc: "We aim to shape the future of real estate through digital innovation. Our vision is to empower businesses with tools that simplify operations, elevate client experiences, and unlock new levels of growth.",
+    },
+    {
+      title: "Our Mission",
+      desc: "Our mission is to build reliable, scalable, and intuitive software that solves real problems. We focus on efficiency, long-term value, and delivering solutions that help businesses thrive in a fast-changing world.",
+    },
+    {
+      title: "Our Vision",
+      desc: "We believe in integrity, transparency, and long-term partnerships. Our work is built on trust, accountability, and a commitment to delivering exceptional results every time.",
+    },
   ];
 
   const [counters, setCounters] = useState(stats.map(() => 0));
@@ -81,37 +96,36 @@ const Building = () => {
         />
       </div>
 
-      <div className="max-w-[1515px] mx-auto px-4 md:px-6 relative">
+      <div className="max-w-full mx-auto px-4 md:px-6 relative"> 
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left Side */}
-          <div className="flex flex-col gap-10 justify-center">
-            <div>
-              <h1
-                className="text-[35px] text-center md:text-left text-[#141414] font-bold"
-                data-aos="fade-right"
-              >
-                Building for the Best
-              </h1>
+          <div className="flex flex-col gap-6">
+            {/* Titles List */}
+            <div className="flex flex-col gap-4">
+              {points.map((item, idx) => (
+                <div key={idx} onClick={() => setActive(idx)} className="cursor-pointer">
+                  <p
+                    className={`text-xl  font-bold transition-all duration-700`}
+                  >
+                   <span className={`border-b border-gray-400 ${active === idx ? "text-black text-4xl" : "text-gray-600"
+                      }`} > {item.title}</span>
+                  </p>
 
-              <p
-                className="text-[#3F3F3F] mt-4 font-[400] text-center md:text-left text-base md:text-[18px] lg:text-[30px] leading-relaxed max-w-[400px] lg:max-w-[550px]"
-                data-aos="fade-right"
-              >
-                Real Results for Real Estate Businesses. Our custom software
-                solutions don't just look good—they drive measurable growth and
-                efficiency for our clients.
-              </p>
-            </div>
-
-            <div data-aos="fade-right">
-              <p className="text-[#3F3F3F] mt-4 text-base md:text-[18px] text-center md:text-left lg:text-[30px] leading-relaxed">
-                Our Vision
-              </p>
-              <p className="text-[#3F3F3F] mt-4 text-base md:text-[18px] lg:text-[30px] text-center md:text-left leading-relaxed">
-                Our Mission
-              </p>
+                  {/* Smoothly show desc only for active */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${active === idx ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0 mt-0"
+                      }`}
+                  >
+                    <p className="text-[#534f4f] text-base font-semibold md:text-[20px] leading-relaxed md:leading-loose md:w-[450px]">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+
+
 
           {/* Right Side Counters */}
           <div className="flex flex-col gap-8 justify-center" data-aos="fade-left">

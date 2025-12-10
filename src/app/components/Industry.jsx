@@ -10,7 +10,7 @@ const Industry = () => {
 
   return (
     <section className="w-full p-16 md:py-24 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1515px] mx-auto flex flex-col gap-5">
+      <div className="max-w-[1515px] mx-auto flex flex-col gap-5"> 
 
         <div className="flex flex-col justify-center">
           <h1

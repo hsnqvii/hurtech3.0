@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import { Toaster } from 'react-hot-toast';
 
 
 export default function RootLayout({ children }) {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar/>
         {children}
+        <Toaster position="top-right" />
         <Footer/>
       </body>
     </html>

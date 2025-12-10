@@ -16,7 +16,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[450px] md:h-[613px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[450px] md:h-screen md:-mt-10 flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0"
         style={{

@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Content Section */}
-      <div className="max-w-[1515px]  mx-auto mt-8">
+      <div className="max-w-full  mx-auto mt-8">/* w-[1515px] */
        
 
          <Contact />
