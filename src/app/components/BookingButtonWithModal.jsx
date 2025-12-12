@@ -8,7 +8,7 @@ const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   // --- Styles for Responsive Design ---
-  
+
   // 1. Backdrop: Ensures full screen coverage
   const backdropStyle = {
     position: 'fixed',
@@ -30,11 +30,12 @@ const Modal = ({ isOpen, onClose }) => {
     padding: '10px', // Reduced padding on mobile
     borderRadius: '8px',
     width: '100%', // Takes full width on mobile
-    maxWidth: '800px', 
+    maxWidth: '750px',
     maxHeight: '100%', // Occupies most of the vertical space
-    height: '90vh', // Sets height relative to viewport height
-    overflowY: 'auto', 
+    height: '85vh', // Sets height relative to viewport height
+    overflowY: 'auto',
     position: 'relative',
+    top:"30px",
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
   };
 
@@ -51,19 +52,19 @@ const Modal = ({ isOpen, onClose }) => {
   // --- Render ---
   return (
     <div style={backdropStyle} onClick={onClose}>
-      <div 
+      <div
         style={contentStyle}
         onClick={(e) => e.stopPropagation()}
       >
-        <button 
-          onClick={onClose} 
-          style={{ 
-            position: 'absolute', 
-            top: '10px', 
-            right: '10px', 
-            background: 'none', 
-            border: 'none', 
-            fontSize: '24px', 
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            background: 'none',
+            border: 'none',
+            fontSize: '24px',
             cursor: 'pointer',
             padding: '5px',
           }}
@@ -71,9 +72,9 @@ const Modal = ({ isOpen, onClose }) => {
         >
           &times;
         </button>
-        
-        <h2 style={{marginTop: '0', fontSize: '1.2rem', paddingBottom: '10px'}}>Book an Appointment</h2>
-        
+
+        <h2 style={{ marginTop: '0', fontSize: '1.2rem', paddingBottom: '10px' }}>Book an Appointment</h2>
+
         {/* Iframe for the Google Calendar Schedule */}
         <iframe
           src={CALENDAR_EMBED_SRC}
@@ -87,10 +88,10 @@ const Modal = ({ isOpen, onClose }) => {
 };
 
 // (BookingButtonWithModal component is the same as before, just uses the updated Modal)
-export const BookingButtonWithModal = ({ 
-    label = 'Book an Appointment', 
-    className = '', 
-    ...rest 
+export const BookingButtonWithModal = ({
+  label = 'Book an Appointment',
+  className = '',
+  ...rest
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -99,17 +100,17 @@ export const BookingButtonWithModal = ({
 
   return (
     <>
-      <button 
-        onClick={handleOpenModal} 
+      <button
+        onClick={handleOpenModal}
         className={className}
         {...rest}
       >
         {label}
       </button>
 
-      <Modal 
-        isOpen={isModalOpen} 
-        onClose={handleCloseModal} 
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
       />
     </>
   );

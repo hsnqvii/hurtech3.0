@@ -85,13 +85,13 @@ const Building = () => {
       className="relative w-full py-6 md:py-24 overflow-hidden"
     >
       {/* Background image */}
-      <div className="absolute inset-0 flex justify-center -z-10 hidden md:flex">
+      <div className="absolute inset-0 flex justify-center -z-10  md:flex">
         <div
-          className="bg-no-repeat bg-center"
+          className="bg-no-repeat md:bg-center bg-bottom h-full "
           style={{
             backgroundImage: `url(${building.src})`,
             width: "1238px",
-            height: "746px",
+            // height: "746px",
           }}
         />
       </div>
