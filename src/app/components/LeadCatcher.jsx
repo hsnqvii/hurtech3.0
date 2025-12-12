@@ -81,7 +81,7 @@ export default function ScrollPausePopup() {
         {/* Button */}
         <BookingButtonWithModal
           label="Book a Free Consultation"
-          className="bg-[#007BFFFC] text-white px-8 sm:px-10 py-3 rounded-full text-base sm:text-lg font-normal transition-all duration-200 hover:bg-transparent hover:border hover:border-primaryBlue"
+          className="bg-[#007BFFFC] text-white px-8 sm:px-10 py-3 rounded-full text-base sm:text-sm font-normal transition-all duration-200 hover:bg-transparent hover:border hover:border-primaryBlue"
           data-aos="fade-up"
         />
       </div>
