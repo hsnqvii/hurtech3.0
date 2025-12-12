@@ -11,6 +11,7 @@ import BuildSomething from './BuildSomething'
 import WhyChooseUs from './WhyChooseUs'
 import Solutions from './Solutions'
 import Contact from './Contact'
+import LeadChatcher from './LeadCatcher'
 
 const LandingPage = () => {
   return (
@@ -61,7 +62,9 @@ const LandingPage = () => {
 
       <section id="faq" className="scroll-mt-[80px]">
         <Faq id="faq" />
+
       </section>
+      <LeadChatcher />
     </>
   )
 }
