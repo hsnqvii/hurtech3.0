@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import client from "../../../public/client.svg";
+import client from "../../../public/client.png";
 import { BookingButtonWithModal } from './BookingButtonWithModal';
 
 const Industry = () => {
@@ -47,11 +47,11 @@ const Industry = () => {
                 ★★★★★
               </div>
 
-              <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-4">
+              <div className="flex items-center gap-3  sm:gap-4 mb-2 sm:mb-4">
                 <Image
                   src={client}
                   alt="Client"
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
+                  className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-r-gray-700  rounded-full object-cover"
                 />
                 <div>
                   <h3 className="font-semibold text-sm sm:text-[18px]">

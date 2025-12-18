@@ -11,7 +11,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 18s linear infinite; /* <-- 18 seconds per loop */
+  animation: marquee 10s linear infinite; /* <-- 18 seconds per loop */
 }
 /* for debug */
 /* * {

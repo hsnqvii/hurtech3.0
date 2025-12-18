@@ -43,21 +43,21 @@ export default function ScrollPausePopup() {
         setCurrentIndex((prev) => (prev + 1) % messages.length);
         setAnimating(false);
       }, 500); // match transition duration
-    }, 3000); // 3s per message
+    }, 4000); // 3s per message
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div
-      className={`fixed inset-0 flex items-end justify-center w-full transition-all duration-500 z-[50]  ${
-        show ? "opacity-100 pointer-events-auto" : "opacity-0 translate-y-full"
+      className={`fixed inset-0 flex items-end justify-end w-[95%] transition-all duration-500 z-[50]  ${
+        show ? "opacity-100" : "opacity-0 translate-y-full"
       }`}
     >
-      <div className="bg-blue-600 w-3/4 md:w-1/5 rounded-lg p-4 mb-4 flex flex-col items-center gap-4 shadow-xl overflow-hidden text-white">
+      <div className="bg-white w-3/4 md:w-1/5 rounded-lg p-4 mb-4 flex flex-col  items-center gap-4 shadow-xl border-2 border-gray-300 overflow-hidden text-black">
 
         {/* Hello at top */}
-        <p className="text-xl font-extrabold text-left w-full text-gray-800">👋 Hey there! Welcome!</p>
+        <p className="text-xl font-extrabold text-left w-full text-gray-800">👋 Hey there! <span className="text-blue-600">Welcome!</span></p>
 
 
         {/* Messages container */}
