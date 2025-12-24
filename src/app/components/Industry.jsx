@@ -2,11 +2,53 @@
 
 import React from "react";
 import Image from "next/image";
-import client from "../../../public/client.png";
+import femaleClient from "../../../public/client.png";
+import maleClient from "../../../public/man.png";
 import { BookingButtonWithModal } from './BookingButtonWithModal';
 
 const Industry = () => {
-  const cards = [1, 2, 3, 4];
+  const cards = [
+    {
+      id: 1,
+      name: "Achraf Jellal",
+      position: "Founder | United States",
+      gender: "male",
+      review:
+        "Syed and his team delivered an exceptional, modern dashboard for SwiftDocket, blending clean code with proactive UX improvements. They are highly skilled, reliable professionals who treats your project with the same care as their own.",
+    },
+    {
+      id: 2,
+      name: "Jhon Camacho",
+      position: "Founder | United States",
+      gender: "male",
+      review:
+        "Amazing team highly recommended!! Worked fast and diligent.",
+    },
+    {
+      id: 3,
+      name: "Adeel Azam",
+      position: "Solo Founder | Italy",
+      gender: "male",
+      review:
+        "Syed Hassan's expertise in full-stack development is unparalleled. His skillful handling of ReactJS, Angular, and Node.js consistently delivers exceptional results. His professionalism and dedication make him a standout freelancer. Highly recommended!",
+    },
+    {
+      id: 4,
+      name: "Arianne Larose",
+      position: "Founder | Canada",
+      gender: "female",
+      review:
+        "Someone whom you can rely on even if it is night 2 am. He is very fluent and can communicate very well and gives his best to complete the project",
+    },
+    {
+      id: 5,
+      name: "Robust Haven",
+      position: "Founder | United States",
+      gender: "male",
+      review:
+        "Hassan and his team were fantastic, quickly resolving our app issues while providing smart, energetic improvements to the overall experience. They were such a pleasure to work with that we’ve already started a new project together—highly recommended!",
+    },
+  ];
 
   return (
     <section className="w-full p-16 md:py-24 px-4 sm:px-6 lg:px-10">
@@ -29,44 +71,41 @@ const Industry = () => {
             deals.
           </p>
 
-            <BookingButtonWithModal
-              label="Book a Meeting" // The text you want on the button
-              className="self-center border border-blue px-8 sm:px-10 py-2 sm:py-3 rounded-full hover:bg-[#007BFF] hover:text-white transition"
-              //  data-aos="fade-up"
-            />
+          <BookingButtonWithModal
+            label="Book a Meeting"
+            className="self-center border border-blue px-8 sm:px-10 py-2 sm:py-3 rounded-full hover:bg-[#007BFF] hover:text-white transition"
+          />
         </div>
 
-        {/* RIGHT SIDE – CLIENT CARDS */}
+        {/* CLIENT CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-left">
-          {cards.map((card, index) => (
+          {cards.map((card) => (
             <div
-              key={index}
+              key={card.id}
               className="border border-[#ddd] p-4 sm:p-6 rounded-2xl shadow-sm bg-white flex flex-col"
             >
               <div className="text-yellow-400 text-lg sm:text-xl mb-2 sm:mb-4">
                 ★★★★★
               </div>
 
-              <div className="flex items-center gap-3  sm:gap-4 mb-2 sm:mb-4">
+              <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-4">
                 <Image
-                  src={client}
-                  alt="Client"
-                  className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-r-gray-700  rounded-full object-cover"
+                  src={card.gender === "male" ? maleClient : femaleClient}
+                  alt={card.name}
+                  className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-r-gray-700 rounded-full object-cover"
                 />
                 <div>
                   <h3 className="font-semibold text-sm sm:text-[18px]">
-                    Gabriel Carreras
+                    {card.name}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-500">
-                    Real Estate Entrepreneur
+                    {card.position}
                   </p>
                 </div>
               </div>
 
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed line-clamp-6">
-                “Hurtech transformed how we manage our 500+ properties. The
-                custom dashboard is a game changer. Transformed how we manage
-                our 500+ properties. The custom dashboard is a game changer.”
+                {card.review}
               </p>
             </div>
           ))}
