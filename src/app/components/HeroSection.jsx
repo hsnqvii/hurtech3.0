@@ -11,7 +11,7 @@ const HeroSection = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setOpen(false); // close mobile menu if open
+      // setOpen(false); // close mobile menu if open
     }
   };
 

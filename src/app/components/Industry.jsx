@@ -25,6 +25,14 @@ const Industry = () => {
         "Amazing team highly recommended!! Worked fast and diligent.",
     },
     {
+      id: 6,
+      name: "Rubin Gajera",
+      position: "Founder | Canada",
+      gender: "male",
+      review:
+        "Hassan and his team provided exceptional support, resolving technical issues with expert speed and clear communication. They understood our requirements perfectly and delivered results ahead of schedule—we highly recommend them!",
+    },
+    {
       id: 3,
       name: "Adeel Azam",
       position: "Solo Founder | Italy",

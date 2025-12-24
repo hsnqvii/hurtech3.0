@@ -11,7 +11,6 @@ import BuildSomething from './BuildSomething'
 import WhyChooseUs from './WhyChooseUs'
 import Solutions from './Solutions'
 import Contact from './Contact'
-import LeadChatcher from './LeadCatcher'
 
 const LandingPage = () => {
   return (
@@ -64,7 +63,7 @@ const LandingPage = () => {
         <Faq id="faq" />
 
       </section>
-      <LeadChatcher />
+      
     </>
   )
 }

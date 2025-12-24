@@ -7,18 +7,11 @@ export default function ScrollPausePopup() {
   const [show, setShow] = useState(false);
   const timerRef = useRef(null);
 
-  // Messages to show
- const messages = [
-  "Get more property leads",
-  "Automate workflows & grow",
-];
-
-
+  const messages = ["Get more property leads", "Automate workflows & grow"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    // Scroll detection
     const handleScroll = () => {
       setShow(false);
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -36,31 +29,29 @@ export default function ScrollPausePopup() {
   }, []);
 
   useEffect(() => {
-    // Rotate messages
     const interval = setInterval(() => {
       setAnimating(true);
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % messages.length);
         setAnimating(false);
-      }, 500); // match transition duration
-    }, 4000); // 3s per message
+      }, 500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
+  if (!show) return null; // hide completely when `show` is false
+
   return (
-    <div
-      className={`fixed inset-0 flex items-end justify-end w-[95%] transition-all duration-500 z-[50]  ${
-        show ? "opacity-100" : "opacity-0 translate-y-full"
-      }`}
-    >
-      <div className="bg-white w-3/4 md:w-1/5 rounded-lg p-4 mb-4 flex flex-col  items-center gap-4 shadow-xl border-2 border-gray-300 overflow-hidden text-black">
+    <div className="fixed bottom-4 right-4 z-[50] transition-all duration-500">
+      <div className="bg-white w-4/4 md:w-[300px] rounded-lg p-4 flex flex-col items-center gap-4 shadow-xl border-2 border-gray-300 text-black">
 
-        {/* Hello at top */}
-        <p className="text-xl font-extrabold text-left w-full text-gray-800">👋 Hey there! <span className="text-blue-600">Welcome!</span></p>
+        {/* Header */}
+        <p className="text-xl font-extrabold text-left w-full text-gray-800">
+          👋 Hey there! <span className="text-blue-600">Welcome!</span>
+        </p>
 
-
-        {/* Messages container */}
+        {/* Messages */}
         <div className="h-[30px] relative w-full flex justify-center overflow-hidden">
           {messages.map((msg, index) => (
             <p
@@ -81,8 +72,7 @@ export default function ScrollPausePopup() {
         {/* Button */}
         <BookingButtonWithModal
           label="Book a Free Consultation"
-          className="bg-[#007BFFFC] text-white px-8 sm:px-10 py-3 rounded-full text-base sm:text-sm font-normal transition-all duration-200 hover:bg-transparent hover:border hover:border-primaryBlue"
-          data-aos="fade-up"
+          className="bg-[#007BFFFC] text-white px-8 sm:px-10 py-3 rounded-full text-base sm:text-sm font-normal transition-all duration-200 hover:border hover:border-primaryBlue"
         />
       </div>
     </div>
